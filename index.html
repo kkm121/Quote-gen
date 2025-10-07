@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quote App</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Random Quote app - shows author then reveals quote, keeps history, dark mode.">
+</head>
+<body id="bd">
+  <a class="sk" href="#main">Skip to content</a>
+
+  <header class="hd">
+    <div class="wrap">
+      <h1 class="logo">Quote App</h1>
+      <div class="ctrl">
+        <button id="d" class="btn icon" aria-pressed="false" title="Toggle dark mode">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="sec card">
+      <h2>Random Quote Generator</h2>
+      <p class="desc">Fetches a random quote from a public API. Shows the author first, then reveals the quote after a short delay. Copy and save history if you want.</p>
+
+      <div class="app">
+        <div class="col maincol">
+          <p id="a" class="auth" aria-live="polite">—</p>
+          <blockquote id="q" class="quo" aria-live="polite">Click <strong>Get</strong> to fetch a quote.</blockquote>
+
+          <div class="row">
+            <button id="f" class="btn main">Get</button>
+            <button id="c" class="btn">Copy</button>
+
+            <!-- spinner + status -->
+            <span id="sp" class="sp" aria-hidden="true" title="loading" hidden></span>
+            <span id="p" class="stat" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <aside class="col histcol">
+          <h3>History</h3>
+          <ul id="hs" class="hslist" aria-live="polite"></ul>
+          <div class="row">
+            <button id="cl" class="btn">Clear</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ft wrap">
+    <p>Source <a href="https://api.quotable.io/random" target="_blank" rel="noopener">Quotable API</a>.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
